@@ -57,9 +57,14 @@ class Miner(BaseNeuron):
             "\u2713",
             f"Getting Chat Completion request from {request.headers.get('Epistula-Signed-By', '')[:8]}!",
         )
-        req = self.client.build_request(
-            "POST", "/chat/completions", content=await request.body()
-        )
+        
+        received_time = time.time()
+        
+        return get_chat_stream(self=self, request=request, path="/chat/completions", body_dict=body_dict, hotkeys={
+            "vali_hk": "1",
+            "miner_hk": "2",
+        }, received_time=received_time)
+        
         r = await self.client.send(req, stream=True)
         return StreamingResponse(
             r.aiter_raw(), background=BackgroundTask(r.aclose), headers=r.headers
@@ -73,6 +78,7 @@ class Miner(BaseNeuron):
         req = self.client.build_request(
             "POST", "/completions", content=await request.body()
         )
+        bt.logging.info(request.body())
         r = await self.client.send(req, stream=True)
         return StreamingResponse(
             r.aiter_raw(), background=BackgroundTask(r.aclose), headers=r.headers
@@ -155,28 +161,28 @@ class Miner(BaseNeuron):
         # Serve passes the axon information to the network + netuid we are hosting on.
         # This will auto-update if the axon port of external ip have changed.
         external_ip = self.config.axon.external_ip or self.config.axon.ip
-        if not external_ip or external_ip == "[::]":
-            try:
-                external_ip = requests.get("https://checkip.amazonaws.com").text.strip()
-                netaddr.IPAddress(external_ip)
-            except Exception:
-                bt.logging.error("Failed to get external IP")
+        # if not external_ip or external_ip == "[::]":
+        #     try:
+        #         external_ip = requests.get("https://checkip.amazonaws.com").text.strip()
+        #         netaddr.IPAddress(external_ip)
+        #     except Exception:
+        #         bt.logging.error("Failed to get external IP")
 
-        bt.logging.info(
-            f"Serving miner endpoint {external_ip}:{self.config.axon.port} on network: {self.config.subtensor.chain_endpoint} with netuid: {self.config.netuid}"
-        )
+        # bt.logging.info(
+        #     f"Serving miner endpoint {external_ip}:{self.config.axon.port} on network: {self.config.subtensor.chain_endpoint} with netuid: {self.config.netuid}"
+        # )
 
-        serve_success = serve_extrinsic(
-            subtensor=self.subtensor,
-            wallet=self.wallet,
-            ip=external_ip,
-            port=self.config.axon.port,
-            protocol=4,
-            netuid=self.config.netuid,
-        )
-        if not serve_success:
-            bt.logging.error("Failed to serve endpoint")
-            return
+        # serve_success = serve_extrinsic(
+        #     subtensor=self.subtensor,
+        #     wallet=self.wallet,
+        #     ip=external_ip,
+        #     port=self.config.axon.port,
+        #     protocol=4,
+        #     netuid=self.config.netuid,
+        # )
+        # if not serve_success:
+        #     bt.logging.error("Failed to serve endpoint")
+        #     return
 
         # Start  starts the miner's endpoint, making it active on the network.
         # change the config in the axon
@@ -189,7 +195,18 @@ class Miner(BaseNeuron):
             methods=["POST"],
         )
         router.add_api_route(
+            "/v1/chat/completions_test",
+            self.create_chat_completion,
+            methods=["POST"],
+        )
+        router.add_api_route(
             "/v1/completions",
+            self.create_completion,
+            dependencies=[Depends(self.determine_epistula_version_and_verify)],
+            methods=["POST"],
+        )
+        router.add_api_route(
+            "/v1/completions_test",
             self.create_completion,
             dependencies=[Depends(self.determine_epistula_version_and_verify)],
             methods=["POST"],
@@ -206,6 +223,11 @@ class Miner(BaseNeuron):
             dependencies=[Depends(self.determine_epistula_version_and_verify)],
             methods=["GET"],
         )
+        router.add_api_route(
+            "/models_test",
+            self.list_models,
+            methods=["GET"],
+        )
         app.include_router(router)
         fast_config = uvicorn.Config(
             app,
@@ -213,6 +235,7 @@ class Miner(BaseNeuron):
             port=self.config.axon.port,
             log_level="info",
             loop="asyncio",
+            reload=True
         )
         self.fast_api = FastAPIThreadedServer(config=fast_config)
         self.fast_api.start()

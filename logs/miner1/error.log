@@ -1,0 +1,564 @@
+Traceback (most recent call last):
+  File "/Users/tutu/Documents/Github/targon/neurons/miner.py", line 3, in <module>
+    from bittensor.core.axon import FastAPIThreadedServer
+ModuleNotFoundError: No module named 'bittensor'
+Traceback (most recent call last):
+  File "/Users/tutu/Documents/Github/targon/neurons/miner.py", line 3, in <module>
+    from bittensor.core.axon import FastAPIThreadedServer
+ModuleNotFoundError: No module named 'bittensor'
+Traceback (most recent call last):
+  File "/Users/tutu/Documents/Github/targon/neurons/miner.py", line 3, in <module>
+    from bittensor.core.axon import FastAPIThreadedServer
+ModuleNotFoundError: No module named 'bittensor'
+Traceback (most recent call last):
+  File "/Users/tutu/Documents/Github/targon/neurons/miner.py", line 3, in <module>
+    from bittensor.core.axon import FastAPIThreadedServer
+ModuleNotFoundError: No module named 'bittensor'
+Traceback (most recent call last):
+  File "/Users/tutu/Documents/Github/targon/neurons/miner.py", line 3, in <module>
+    from bittensor.core.axon import FastAPIThreadedServer
+ModuleNotFoundError: No module named 'bittensor'
+Traceback (most recent call last):
+  File "/Users/tutu/Documents/Github/targon/neurons/miner.py", line 3, in <module>
+    from bittensor.core.axon import FastAPIThreadedServer
+ModuleNotFoundError: No module named 'bittensor'
+Traceback (most recent call last):
+  File "/Users/tutu/Documents/Github/targon/neurons/miner.py", line 3, in <module>
+    from bittensor.core.axon import FastAPIThreadedServer
+ModuleNotFoundError: No module named 'bittensor'
+Traceback (most recent call last):
+  File "/Users/tutu/Documents/Github/targon/neurons/miner.py", line 3, in <module>
+    from bittensor.core.axon import FastAPIThreadedServer
+ModuleNotFoundError: No module named 'bittensor'
+Traceback (most recent call last):
+  File "/Users/tutu/Documents/Github/targon/neurons/miner.py", line 3, in <module>
+    from bittensor.core.axon import FastAPIThreadedServer
+ModuleNotFoundError: No module named 'bittensor'
+Traceback (most recent call last):
+  File "/Users/tutu/Documents/Github/targon/neurons/miner.py", line 3, in <module>
+    from bittensor.core.axon import FastAPIThreadedServer
+ModuleNotFoundError: No module named 'bittensor'
+Traceback (most recent call last):
+  File "/Users/tutu/Documents/Github/targon/neurons/miner.py", line 3, in <module>
+    from bittensor.core.axon import FastAPIThreadedServer
+ModuleNotFoundError: No module named 'bittensor'
+Traceback (most recent call last):
+  File "/Users/tutu/Documents/Github/targon/neurons/miner.py", line 3, in <module>
+    from bittensor.core.axon import FastAPIThreadedServer
+ModuleNotFoundError: No module named 'bittensor'
+Traceback (most recent call last):
+  File "/Users/tutu/Documents/Github/targon/neurons/miner.py", line 3, in <module>
+    from bittensor.core.axon import FastAPIThreadedServer
+ModuleNotFoundError: No module named 'bittensor'
+Traceback (most recent call last):
+  File "/Users/tutu/Documents/Github/targon/neurons/miner.py", line 3, in <module>
+    from bittensor.core.axon import FastAPIThreadedServer
+ModuleNotFoundError: No module named 'bittensor'
+Traceback (most recent call last):
+  File "/Users/tutu/Documents/Github/targon/neurons/miner.py", line 3, in <module>
+    from bittensor.core.axon import FastAPIThreadedServer
+ModuleNotFoundError: No module named 'bittensor'
+Traceback (most recent call last):
+  File "/Users/tutu/Documents/Github/targon/neurons/miner.py", line 3, in <module>
+    from bittensor.core.axon import FastAPIThreadedServer
+ModuleNotFoundError: No module named 'bittensor'
+INFO:     Started server process [34089]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+ERROR:    [Errno 48] error while attempting to bind on address ('0.0.0.0', 30001): address already in use
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+Task exception was never retrieved
+future: <Task finished name='Task-1' coro=<Server.serve() done, defined at /Users/tutu/Documents/Github/targon/.venv/lib/python3.10/site-packages/uvicorn/server.py:68> exception=SystemExit(1)>
+Traceback (most recent call last):
+  File "/Users/tutu/Documents/Github/targon/.venv/lib/python3.10/site-packages/uvicorn/server.py", line 163, in startup
+    server = await loop.create_server(
+  File "/opt/homebrew/Cellar/python@3.10/3.10.14_1/Frameworks/Python.framework/Versions/3.10/lib/python3.10/asyncio/base_events.py", line 1519, in create_server
+    raise OSError(err.errno, 'error while attempting '
+OSError: [Errno 48] error while attempting to bind on address ('0.0.0.0', 30001): address already in use
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/opt/homebrew/Cellar/python@3.10/3.10.14_1/Frameworks/Python.framework/Versions/3.10/lib/python3.10/threading.py", line 1016, in _bootstrap_inner
+    self.run()
+  File "/opt/homebrew/Cellar/python@3.10/3.10.14_1/Frameworks/Python.framework/Versions/3.10/lib/python3.10/threading.py", line 953, in run
+    self._target(*self._args, **self._kwargs)
+  File "/Users/tutu/Documents/Github/targon/.venv/lib/python3.10/site-packages/uvicorn/server.py", line 66, in run
+    return asyncio.run(self.serve(sockets=sockets))
+  File "/Users/tutu/Documents/Github/targon/.venv/lib/python3.10/site-packages/nest_asyncio.py", line 30, in run
+    return loop.run_until_complete(task)
+  File "/Users/tutu/Documents/Github/targon/.venv/lib/python3.10/site-packages/nest_asyncio.py", line 92, in run_until_complete
+    self._run_once()
+  File "/Users/tutu/Documents/Github/targon/.venv/lib/python3.10/site-packages/nest_asyncio.py", line 133, in _run_once
+    handle._run()
+  File "/opt/homebrew/Cellar/python@3.10/3.10.14_1/Frameworks/Python.framework/Versions/3.10/lib/python3.10/asyncio/events.py", line 80, in _run
+    self._context.run(self._callback, *self._args)
+  File "/opt/homebrew/Cellar/python@3.10/3.10.14_1/Frameworks/Python.framework/Versions/3.10/lib/python3.10/asyncio/tasks.py", line 315, in __wakeup
+    self.__step()
+  File "/opt/homebrew/Cellar/python@3.10/3.10.14_1/Frameworks/Python.framework/Versions/3.10/lib/python3.10/asyncio/tasks.py", line 232, in __step
+    result = coro.send(None)
+  File "/Users/tutu/Documents/Github/targon/.venv/lib/python3.10/site-packages/uvicorn/server.py", line 70, in serve
+    await self._serve(sockets)
+  File "/Users/tutu/Documents/Github/targon/.venv/lib/python3.10/site-packages/uvicorn/server.py", line 85, in _serve
+    await self.startup(sockets=sockets)
+  File "/Users/tutu/Documents/Github/targon/.venv/lib/python3.10/site-packages/uvicorn/server.py", line 173, in startup
+    sys.exit(1)
+SystemExit: 1
+INFO:     Started server process [35402]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     Uvicorn running on http://0.0.0.0:40001 (Press CTRL+C to quit)
+Exception in thread Thread-7 (start_subscription):
+Traceback (most recent call last):
+  File "/opt/homebrew/Cellar/python@3.10/3.10.14_1/Frameworks/Python.framework/Versions/3.10/lib/python3.10/threading.py", line 1016, in _bootstrap_inner
+    self.run()
+  File "/opt/homebrew/Cellar/python@3.10/3.10.14_1/Frameworks/Python.framework/Versions/3.10/lib/python3.10/threading.py", line 953, in run
+    self._target(*self._args, **self._kwargs)
+  File "/Users/tutu/Documents/Github/targon/targon/metagraph.py", line 104, in start_subscription
+    return substrate.subscribe_block_headers(
+  File "/Users/tutu/Documents/Github/targon/.venv/lib/python3.10/site-packages/substrateinterface/base.py", line 2586, in subscribe_block_headers
+    return self.__get_block_handler(
+  File "/Users/tutu/Documents/Github/targon/.venv/lib/python3.10/site-packages/substrateinterface/base.py", line 2439, in __get_block_handler
+    result = self.rpc_request(f"chain_subscribe{rpc_method_prefix}Heads", [], result_handler=result_handler)
+  File "/Users/tutu/Documents/Github/targon/.venv/lib/python3.10/site-packages/substrateinterface/base.py", line 329, in rpc_request
+    self.__rpc_message_queue.append(json.loads(self.websocket.recv()))
+  File "/Users/tutu/Documents/Github/targon/.venv/lib/python3.10/site-packages/websocket/_core.py", line 388, in recv
+    opcode, data = self.recv_data()
+  File "/Users/tutu/Documents/Github/targon/.venv/lib/python3.10/site-packages/websocket/_core.py", line 416, in recv_data
+    opcode, frame = self.recv_data_frame(control_frame)
+  File "/Users/tutu/Documents/Github/targon/.venv/lib/python3.10/site-packages/websocket/_core.py", line 437, in recv_data_frame
+    frame = self.recv_frame()
+  File "/Users/tutu/Documents/Github/targon/.venv/lib/python3.10/site-packages/websocket/_core.py", line 478, in recv_frame
+    return self.frame_buffer.recv_frame()
+  File "/Users/tutu/Documents/Github/targon/.venv/lib/python3.10/site-packages/websocket/_abnf.py", line 363, in recv_frame
+    self.recv_header()
+  File "/Users/tutu/Documents/Github/targon/.venv/lib/python3.10/site-packages/websocket/_abnf.py", line 319, in recv_header
+    header = self.recv_strict(2)
+  File "/Users/tutu/Documents/Github/targon/.venv/lib/python3.10/site-packages/websocket/_abnf.py", line 398, in recv_strict
+    bytes_ = self.recv(min(16384, shortage))
+  File "/Users/tutu/Documents/Github/targon/.venv/lib/python3.10/site-packages/websocket/_core.py", line 563, in _recv
+    return recv(self.sock, bufsize)
+  File "/Users/tutu/Documents/Github/targon/.venv/lib/python3.10/site-packages/websocket/_socket.py", line 132, in recv
+    raise WebSocketConnectionClosedException("Connection to remote host was lost.")
+websocket._exceptions.WebSocketConnectionClosedException: Connection to remote host was lost.
+unknown option --reload
+usage: /Users/tutu/Documents/Github/targon/.venv/bin/python3 [option] ... [-c cmd | -m mod | file | -] [arg] ...
+Try `python -h' for more information.
+unknown option --reload
+usage: /Users/tutu/Documents/Github/targon/.venv/bin/python3 [option] ... [-c cmd | -m mod | file | -] [arg] ...
+Try `python -h' for more information.
+unknown option --reload
+usage: /Users/tutu/Documents/Github/targon/.venv/bin/python3 [option] ... [-c cmd | -m mod | file | -] [arg] ...
+Try `python -h' for more information.
+unknown option --reload
+usage: /Users/tutu/Documents/Github/targon/.venv/bin/python3 [option] ... [-c cmd | -m mod | file | -] [arg] ...
+Try `python -h' for more information.
+unknown option --reload
+usage: /Users/tutu/Documents/Github/targon/.venv/bin/python3 [option] ... [-c cmd | -m mod | file | -] [arg] ...
+Try `python -h' for more information.
+unknown option --reload
+usage: /Users/tutu/Documents/Github/targon/.venv/bin/python3 [option] ... [-c cmd | -m mod | file | -] [arg] ...
+Try `python -h' for more information.
+unknown option --reload
+usage: /Users/tutu/Documents/Github/targon/.venv/bin/python3 [option] ... [-c cmd | -m mod | file | -] [arg] ...
+Try `python -h' for more information.
+unknown option --reload
+usage: /Users/tutu/Documents/Github/targon/.venv/bin/python3 [option] ... [-c cmd | -m mod | file | -] [arg] ...
+Try `python -h' for more information.
+unknown option --reload
+usage: /Users/tutu/Documents/Github/targon/.venv/bin/python3 [option] ... [-c cmd | -m mod | file | -] [arg] ...
+Try `python -h' for more information.
+unknown option --reload
+usage: /Users/tutu/Documents/Github/targon/.venv/bin/python3 [option] ... [-c cmd | -m mod | file | -] [arg] ...
+Try `python -h' for more information.
+unknown option --reload
+usage: /Users/tutu/Documents/Github/targon/.venv/bin/python3 [option] ... [-c cmd | -m mod | file | -] [arg] ...
+Try `python -h' for more information.
+unknown option --reload
+usage: /Users/tutu/Documents/Github/targon/.venv/bin/python3 [option] ... [-c cmd | -m mod | file | -] [arg] ...
+Try `python -h' for more information.
+unknown option --reload
+usage: /Users/tutu/Documents/Github/targon/.venv/bin/python3 [option] ... [-c cmd | -m mod | file | -] [arg] ...
+Try `python -h' for more information.
+unknown option --reload
+usage: /Users/tutu/Documents/Github/targon/.venv/bin/python3 [option] ... [-c cmd | -m mod | file | -] [arg] ...
+Try `python -h' for more information.
+unknown option --reload
+usage: /Users/tutu/Documents/Github/targon/.venv/bin/python3 [option] ... [-c cmd | -m mod | file | -] [arg] ...
+Try `python -h' for more information.
+unknown option --reload
+usage: /Users/tutu/Documents/Github/targon/.venv/bin/python3 [option] ... [-c cmd | -m mod | file | -] [arg] ...
+Try `python -h' for more information.
+unknown option --reload
+usage: /Users/tutu/Documents/Github/targon/.venv/bin/python3 [option] ... [-c cmd | -m mod | file | -] [arg] ...
+Try `python -h' for more information.
+unknown option --reload
+usage: /Users/tutu/Documents/Github/targon/.venv/bin/python3 [option] ... [-c cmd | -m mod | file | -] [arg] ...
+Try `python -h' for more information.
+unknown option --reload
+usage: /Users/tutu/Documents/Github/targon/.venv/bin/python3 [option] ... [-c cmd | -m mod | file | -] [arg] ...
+Try `python -h' for more information.
+unknown option --reload
+usage: /Users/tutu/Documents/Github/targon/.venv/bin/python3 [option] ... [-c cmd | -m mod | file | -] [arg] ...
+Try `python -h' for more information.
+unknown option --reload
+usage: /Users/tutu/Documents/Github/targon/.venv/bin/python3 [option] ... [-c cmd | -m mod | file | -] [arg] ...
+Try `python -h' for more information.
+unknown option --reload
+usage: /Users/tutu/Documents/Github/targon/.venv/bin/python3 [option] ... [-c cmd | -m mod | file | -] [arg] ...
+Try `python -h' for more information.
+unknown option --reload
+usage: /Users/tutu/Documents/Github/targon/.venv/bin/python3 [option] ... [-c cmd | -m mod | file | -] [arg] ...
+Try `python -h' for more information.
+unknown option --reload
+usage: /Users/tutu/Documents/Github/targon/.venv/bin/python3 [option] ... [-c cmd | -m mod | file | -] [arg] ...
+Try `python -h' for more information.
+unknown option --reload
+usage: /Users/tutu/Documents/Github/targon/.venv/bin/python3 [option] ... [-c cmd | -m mod | file | -] [arg] ...
+Try `python -h' for more information.
+unknown option --reload
+usage: /Users/tutu/Documents/Github/targon/.venv/bin/python3 [option] ... [-c cmd | -m mod | file | -] [arg] ...
+Try `python -h' for more information.
+unknown option --reload
+usage: /Users/tutu/Documents/Github/targon/.venv/bin/python3 [option] ... [-c cmd | -m mod | file | -] [arg] ...
+Try `python -h' for more information.
+unknown option --reload
+usage: /Users/tutu/Documents/Github/targon/.venv/bin/python3 [option] ... [-c cmd | -m mod | file | -] [arg] ...
+Try `python -h' for more information.
+unknown option --reload
+usage: /Users/tutu/Documents/Github/targon/.venv/bin/python3 [option] ... [-c cmd | -m mod | file | -] [arg] ...
+Try `python -h' for more information.
+unknown option --reload
+usage: /Users/tutu/Documents/Github/targon/.venv/bin/python3 [option] ... [-c cmd | -m mod | file | -] [arg] ...
+Try `python -h' for more information.
+unknown option --reload
+usage: /Users/tutu/Documents/Github/targon/.venv/bin/python3 [option] ... [-c cmd | -m mod | file | -] [arg] ...
+Try `python -h' for more information.
+unknown option --reload
+usage: /Users/tutu/Documents/Github/targon/.venv/bin/python3 [option] ... [-c cmd | -m mod | file | -] [arg] ...
+Try `python -h' for more information.
+unknown option --reload
+usage: /Users/tutu/Documents/Github/targon/.venv/bin/python3 [option] ... [-c cmd | -m mod | file | -] [arg] ...
+Try `python -h' for more information.
+unknown option --reload
+usage: /Users/tutu/Documents/Github/targon/.venv/bin/python3 [option] ... [-c cmd | -m mod | file | -] [arg] ...
+Try `python -h' for more information.
+unknown option --reload
+usage: /Users/tutu/Documents/Github/targon/.venv/bin/python3 [option] ... [-c cmd | -m mod | file | -] [arg] ...
+Try `python -h' for more information.
+unknown option --reload
+usage: /Users/tutu/Documents/Github/targon/.venv/bin/python3 [option] ... [-c cmd | -m mod | file | -] [arg] ...
+Try `python -h' for more information.
+unknown option --reload
+usage: /Users/tutu/Documents/Github/targon/.venv/bin/python3 [option] ... [-c cmd | -m mod | file | -] [arg] ...
+Try `python -h' for more information.
+unknown option --reload
+usage: /Users/tutu/Documents/Github/targon/.venv/bin/python3 [option] ... [-c cmd | -m mod | file | -] [arg] ...
+Try `python -h' for more information.
+unknown option --reload
+usage: /Users/tutu/Documents/Github/targon/.venv/bin/python3 [option] ... [-c cmd | -m mod | file | -] [arg] ...
+Try `python -h' for more information.
+unknown option --reload
+usage: /Users/tutu/Documents/Github/targon/.venv/bin/python3 [option] ... [-c cmd | -m mod | file | -] [arg] ...
+Try `python -h' for more information.
+unknown option --reload
+usage: /Users/tutu/Documents/Github/targon/.venv/bin/python3 [option] ... [-c cmd | -m mod | file | -] [arg] ...
+Try `python -h' for more information.
+unknown option --reload
+usage: /Users/tutu/Documents/Github/targon/.venv/bin/python3 [option] ... [-c cmd | -m mod | file | -] [arg] ...
+Try `python -h' for more information.
+unknown option --reload
+usage: /Users/tutu/Documents/Github/targon/.venv/bin/python3 [option] ... [-c cmd | -m mod | file | -] [arg] ...
+Try `python -h' for more information.
+unknown option --reload
+usage: /Users/tutu/Documents/Github/targon/.venv/bin/python3 [option] ... [-c cmd | -m mod | file | -] [arg] ...
+Try `python -h' for more information.
+unknown option --reload
+usage: /Users/tutu/Documents/Github/targon/.venv/bin/python3 [option] ... [-c cmd | -m mod | file | -] [arg] ...
+Try `python -h' for more information.
+unknown option --reload
+usage: /Users/tutu/Documents/Github/targon/.venv/bin/python3 [option] ... [-c cmd | -m mod | file | -] [arg] ...
+Try `python -h' for more information.
+unknown option --reload
+usage: /Users/tutu/Documents/Github/targon/.venv/bin/python3 [option] ... [-c cmd | -m mod | file | -] [arg] ...
+Try `python -h' for more information.
+unknown option --reload
+usage: /Users/tutu/Documents/Github/targon/.venv/bin/python3 [option] ... [-c cmd | -m mod | file | -] [arg] ...
+Try `python -h' for more information.
+unknown option --reload
+usage: /Users/tutu/Documents/Github/targon/.venv/bin/python3 [option] ... [-c cmd | -m mod | file | -] [arg] ...
+Try `python -h' for more information.
+unknown option --reload
+usage: /Users/tutu/Documents/Github/targon/.venv/bin/python3 [option] ... [-c cmd | -m mod | file | -] [arg] ...
+Try `python -h' for more information.
+unknown option --reload
+usage: /Users/tutu/Documents/Github/targon/.venv/bin/python3 [option] ... [-c cmd | -m mod | file | -] [arg] ...
+Try `python -h' for more information.
+unknown option --reload
+usage: /Users/tutu/Documents/Github/targon/.venv/bin/python3 [option] ... [-c cmd | -m mod | file | -] [arg] ...
+Try `python -h' for more information.
+unknown option --reload
+usage: /Users/tutu/Documents/Github/targon/.venv/bin/python3 [option] ... [-c cmd | -m mod | file | -] [arg] ...
+Try `python -h' for more information.
+unknown option --reload
+usage: /Users/tutu/Documents/Github/targon/.venv/bin/python3 [option] ... [-c cmd | -m mod | file | -] [arg] ...
+Try `python -h' for more information.
+unknown option --reload
+usage: /Users/tutu/Documents/Github/targon/.venv/bin/python3 [option] ... [-c cmd | -m mod | file | -] [arg] ...
+Try `python -h' for more information.
+unknown option --reload
+usage: /Users/tutu/Documents/Github/targon/.venv/bin/python3 [option] ... [-c cmd | -m mod | file | -] [arg] ...
+Try `python -h' for more information.
+unknown option --reload
+usage: /Users/tutu/Documents/Github/targon/.venv/bin/python3 [option] ... [-c cmd | -m mod | file | -] [arg] ...
+Try `python -h' for more information.
+unknown option --reload
+usage: /Users/tutu/Documents/Github/targon/.venv/bin/python3 [option] ... [-c cmd | -m mod | file | -] [arg] ...
+Try `python -h' for more information.
+unknown option --reload
+usage: /Users/tutu/Documents/Github/targon/.venv/bin/python3 [option] ... [-c cmd | -m mod | file | -] [arg] ...
+Try `python -h' for more information.
+unknown option --reload
+usage: /Users/tutu/Documents/Github/targon/.venv/bin/python3 [option] ... [-c cmd | -m mod | file | -] [arg] ...
+Try `python -h' for more information.
+unknown option --reload
+usage: /Users/tutu/Documents/Github/targon/.venv/bin/python3 [option] ... [-c cmd | -m mod | file | -] [arg] ...
+Try `python -h' for more information.
+unknown option --reload
+usage: /Users/tutu/Documents/Github/targon/.venv/bin/python3 [option] ... [-c cmd | -m mod | file | -] [arg] ...
+Try `python -h' for more information.
+unknown option --reload
+usage: /Users/tutu/Documents/Github/targon/.venv/bin/python3 [option] ... [-c cmd | -m mod | file | -] [arg] ...
+Try `python -h' for more information.
+unknown option --reload
+usage: /Users/tutu/Documents/Github/targon/.venv/bin/python3 [option] ... [-c cmd | -m mod | file | -] [arg] ...
+Try `python -h' for more information.
+INFO:     Started server process [17676]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     Uvicorn running on http://0.0.0.0:40001 (Press CTRL+C to quit)
+INFO:     Started server process [18556]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     Uvicorn running on http://0.0.0.0:40001 (Press CTRL+C to quit)
+INFO:     Started server process [18723]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     Uvicorn running on http://0.0.0.0:40001 (Press CTRL+C to quit)
+INFO:     Started server process [50393]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     Uvicorn running on http://0.0.0.0:40001 (Press CTRL+C to quit)
+/Users/tutu/Documents/Github/targon/neurons/miner.py:63: RuntimeWarning: coroutine 'Request.body' was never awaited
+  bt.logging.info(request.body())
+RuntimeWarning: Enable tracemalloc to get the object allocation traceback
+ERROR:    Exception in ASGI application
+Traceback (most recent call last):
+  File "/Users/tutu/Documents/Github/targon/.venv/lib/python3.10/site-packages/httpx/_transports/default.py", line 101, in map_httpcore_exceptions
+    yield
+  File "/Users/tutu/Documents/Github/targon/.venv/lib/python3.10/site-packages/httpx/_transports/default.py", line 394, in handle_async_request
+    resp = await self._pool.handle_async_request(req)
+  File "/Users/tutu/Documents/Github/targon/.venv/lib/python3.10/site-packages/httpcore/_async/connection_pool.py", line 256, in handle_async_request
+    raise exc from None
+  File "/Users/tutu/Documents/Github/targon/.venv/lib/python3.10/site-packages/httpcore/_async/connection_pool.py", line 236, in handle_async_request
+    response = await connection.handle_async_request(
+  File "/Users/tutu/Documents/Github/targon/.venv/lib/python3.10/site-packages/httpcore/_async/http_proxy.py", line 206, in handle_async_request
+    return await self._connection.handle_async_request(proxy_request)
+  File "/Users/tutu/Documents/Github/targon/.venv/lib/python3.10/site-packages/httpcore/_async/connection.py", line 103, in handle_async_request
+    return await self._connection.handle_async_request(request)
+  File "/Users/tutu/Documents/Github/targon/.venv/lib/python3.10/site-packages/httpcore/_async/http11.py", line 136, in handle_async_request
+    raise exc
+  File "/Users/tutu/Documents/Github/targon/.venv/lib/python3.10/site-packages/httpcore/_async/http11.py", line 106, in handle_async_request
+    ) = await self._receive_response_headers(**kwargs)
+  File "/Users/tutu/Documents/Github/targon/.venv/lib/python3.10/site-packages/httpcore/_async/http11.py", line 177, in _receive_response_headers
+    event = await self._receive_event(timeout=timeout)
+  File "/Users/tutu/Documents/Github/targon/.venv/lib/python3.10/site-packages/httpcore/_async/http11.py", line 217, in _receive_event
+    data = await self._network_stream.read(
+  File "/Users/tutu/Documents/Github/targon/.venv/lib/python3.10/site-packages/httpcore/_backends/anyio.py", line 32, in read
+    with map_exceptions(exc_map):
+  File "/opt/homebrew/Cellar/python@3.10/3.10.14_1/Frameworks/Python.framework/Versions/3.10/lib/python3.10/contextlib.py", line 153, in __exit__
+    self.gen.throw(typ, value, traceback)
+  File "/Users/tutu/Documents/Github/targon/.venv/lib/python3.10/site-packages/httpcore/_exceptions.py", line 14, in map_exceptions
+    raise to_exc(exc) from exc
+httpcore.ReadTimeout
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/tutu/Documents/Github/targon/.venv/lib/python3.10/site-packages/uvicorn/protocols/http/h11_impl.py", line 403, in run_asgi
+    result = await app(  # type: ignore[func-returns-value]
+  File "/Users/tutu/Documents/Github/targon/.venv/lib/python3.10/site-packages/uvicorn/middleware/proxy_headers.py", line 60, in __call__
+    return await self.app(scope, receive, send)
+  File "/Users/tutu/Documents/Github/targon/.venv/lib/python3.10/site-packages/fastapi/applications.py", line 1054, in __call__
+    await super().__call__(scope, receive, send)
+  File "/Users/tutu/Documents/Github/targon/.venv/lib/python3.10/site-packages/starlette/applications.py", line 123, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/Users/tutu/Documents/Github/targon/.venv/lib/python3.10/site-packages/starlette/middleware/errors.py", line 186, in __call__
+    raise exc
+  File "/Users/tutu/Documents/Github/targon/.venv/lib/python3.10/site-packages/starlette/middleware/errors.py", line 164, in __call__
+    await self.app(scope, receive, _send)
+  File "/Users/tutu/Documents/Github/targon/.venv/lib/python3.10/site-packages/starlette/middleware/exceptions.py", line 65, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "/Users/tutu/Documents/Github/targon/.venv/lib/python3.10/site-packages/starlette/_exception_handler.py", line 64, in wrapped_app
+    raise exc
+  File "/Users/tutu/Documents/Github/targon/.venv/lib/python3.10/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    await app(scope, receive, sender)
+  File "/Users/tutu/Documents/Github/targon/.venv/lib/python3.10/site-packages/starlette/routing.py", line 756, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/Users/tutu/Documents/Github/targon/.venv/lib/python3.10/site-packages/starlette/routing.py", line 776, in app
+    await route.handle(scope, receive, send)
+  File "/Users/tutu/Documents/Github/targon/.venv/lib/python3.10/site-packages/starlette/routing.py", line 297, in handle
+    await self.app(scope, receive, send)
+  File "/Users/tutu/Documents/Github/targon/.venv/lib/python3.10/site-packages/starlette/routing.py", line 77, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "/Users/tutu/Documents/Github/targon/.venv/lib/python3.10/site-packages/starlette/_exception_handler.py", line 64, in wrapped_app
+    raise exc
+  File "/Users/tutu/Documents/Github/targon/.venv/lib/python3.10/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    await app(scope, receive, sender)
+  File "/Users/tutu/Documents/Github/targon/.venv/lib/python3.10/site-packages/starlette/routing.py", line 72, in app
+    response = await func(request)
+  File "/Users/tutu/Documents/Github/targon/.venv/lib/python3.10/site-packages/fastapi/routing.py", line 278, in app
+    raw_response = await run_endpoint_function(
+  File "/Users/tutu/Documents/Github/targon/.venv/lib/python3.10/site-packages/fastapi/routing.py", line 191, in run_endpoint_function
+    return await dependant.call(**values)
+  File "/Users/tutu/Documents/Github/targon/neurons/miner.py", line 64, in create_chat_completion
+    r = await self.client.send(req, stream=True)
+  File "/Users/tutu/Documents/Github/targon/.venv/lib/python3.10/site-packages/httpx/_client.py", line 1629, in send
+    response = await self._send_handling_auth(
+  File "/Users/tutu/Documents/Github/targon/.venv/lib/python3.10/site-packages/httpx/_client.py", line 1657, in _send_handling_auth
+    response = await self._send_handling_redirects(
+  File "/Users/tutu/Documents/Github/targon/.venv/lib/python3.10/site-packages/httpx/_client.py", line 1694, in _send_handling_redirects
+    response = await self._send_single_request(request)
+  File "/Users/tutu/Documents/Github/targon/.venv/lib/python3.10/site-packages/httpx/_client.py", line 1730, in _send_single_request
+    response = await transport.handle_async_request(request)
+  File "/Users/tutu/Documents/Github/targon/.venv/lib/python3.10/site-packages/httpx/_transports/default.py", line 393, in handle_async_request
+    with map_httpcore_exceptions():
+  File "/opt/homebrew/Cellar/python@3.10/3.10.14_1/Frameworks/Python.framework/Versions/3.10/lib/python3.10/contextlib.py", line 153, in __exit__
+    self.gen.throw(typ, value, traceback)
+  File "/Users/tutu/Documents/Github/targon/.venv/lib/python3.10/site-packages/httpx/_transports/default.py", line 118, in map_httpcore_exceptions
+    raise mapped_exc(message) from exc
+httpx.ReadTimeout
+INFO:     Started server process [50788]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     Uvicorn running on http://0.0.0.0:40001 (Press CTRL+C to quit)
+ERROR:    Exception in ASGI application
+Traceback (most recent call last):
+  File "/Users/tutu/Documents/Github/targon/.venv/lib/python3.10/site-packages/httpx/_transports/default.py", line 101, in map_httpcore_exceptions
+    yield
+  File "/Users/tutu/Documents/Github/targon/.venv/lib/python3.10/site-packages/httpx/_transports/default.py", line 394, in handle_async_request
+    resp = await self._pool.handle_async_request(req)
+  File "/Users/tutu/Documents/Github/targon/.venv/lib/python3.10/site-packages/httpcore/_async/connection_pool.py", line 256, in handle_async_request
+    raise exc from None
+  File "/Users/tutu/Documents/Github/targon/.venv/lib/python3.10/site-packages/httpcore/_async/connection_pool.py", line 236, in handle_async_request
+    response = await connection.handle_async_request(
+  File "/Users/tutu/Documents/Github/targon/.venv/lib/python3.10/site-packages/httpcore/_async/http_proxy.py", line 206, in handle_async_request
+    return await self._connection.handle_async_request(proxy_request)
+  File "/Users/tutu/Documents/Github/targon/.venv/lib/python3.10/site-packages/httpcore/_async/connection.py", line 103, in handle_async_request
+    return await self._connection.handle_async_request(request)
+  File "/Users/tutu/Documents/Github/targon/.venv/lib/python3.10/site-packages/httpcore/_async/http11.py", line 136, in handle_async_request
+    raise exc
+  File "/Users/tutu/Documents/Github/targon/.venv/lib/python3.10/site-packages/httpcore/_async/http11.py", line 106, in handle_async_request
+    ) = await self._receive_response_headers(**kwargs)
+  File "/Users/tutu/Documents/Github/targon/.venv/lib/python3.10/site-packages/httpcore/_async/http11.py", line 177, in _receive_response_headers
+    event = await self._receive_event(timeout=timeout)
+  File "/Users/tutu/Documents/Github/targon/.venv/lib/python3.10/site-packages/httpcore/_async/http11.py", line 217, in _receive_event
+    data = await self._network_stream.read(
+  File "/Users/tutu/Documents/Github/targon/.venv/lib/python3.10/site-packages/httpcore/_backends/anyio.py", line 32, in read
+    with map_exceptions(exc_map):
+  File "/opt/homebrew/Cellar/python@3.10/3.10.14_1/Frameworks/Python.framework/Versions/3.10/lib/python3.10/contextlib.py", line 153, in __exit__
+    self.gen.throw(typ, value, traceback)
+  File "/Users/tutu/Documents/Github/targon/.venv/lib/python3.10/site-packages/httpcore/_exceptions.py", line 14, in map_exceptions
+    raise to_exc(exc) from exc
+httpcore.ReadTimeout
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/tutu/Documents/Github/targon/.venv/lib/python3.10/site-packages/uvicorn/protocols/http/h11_impl.py", line 403, in run_asgi
+    result = await app(  # type: ignore[func-returns-value]
+  File "/Users/tutu/Documents/Github/targon/.venv/lib/python3.10/site-packages/uvicorn/middleware/proxy_headers.py", line 60, in __call__
+    return await self.app(scope, receive, send)
+  File "/Users/tutu/Documents/Github/targon/.venv/lib/python3.10/site-packages/fastapi/applications.py", line 1054, in __call__
+    await super().__call__(scope, receive, send)
+  File "/Users/tutu/Documents/Github/targon/.venv/lib/python3.10/site-packages/starlette/applications.py", line 123, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/Users/tutu/Documents/Github/targon/.venv/lib/python3.10/site-packages/starlette/middleware/errors.py", line 186, in __call__
+    raise exc
+  File "/Users/tutu/Documents/Github/targon/.venv/lib/python3.10/site-packages/starlette/middleware/errors.py", line 164, in __call__
+    await self.app(scope, receive, _send)
+  File "/Users/tutu/Documents/Github/targon/.venv/lib/python3.10/site-packages/starlette/middleware/exceptions.py", line 65, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "/Users/tutu/Documents/Github/targon/.venv/lib/python3.10/site-packages/starlette/_exception_handler.py", line 64, in wrapped_app
+    raise exc
+  File "/Users/tutu/Documents/Github/targon/.venv/lib/python3.10/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    await app(scope, receive, sender)
+  File "/Users/tutu/Documents/Github/targon/.venv/lib/python3.10/site-packages/starlette/routing.py", line 756, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/Users/tutu/Documents/Github/targon/.venv/lib/python3.10/site-packages/starlette/routing.py", line 776, in app
+    await route.handle(scope, receive, send)
+  File "/Users/tutu/Documents/Github/targon/.venv/lib/python3.10/site-packages/starlette/routing.py", line 297, in handle
+    await self.app(scope, receive, send)
+  File "/Users/tutu/Documents/Github/targon/.venv/lib/python3.10/site-packages/starlette/routing.py", line 77, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "/Users/tutu/Documents/Github/targon/.venv/lib/python3.10/site-packages/starlette/_exception_handler.py", line 64, in wrapped_app
+    raise exc
+  File "/Users/tutu/Documents/Github/targon/.venv/lib/python3.10/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    await app(scope, receive, sender)
+  File "/Users/tutu/Documents/Github/targon/.venv/lib/python3.10/site-packages/starlette/routing.py", line 72, in app
+    response = await func(request)
+  File "/Users/tutu/Documents/Github/targon/.venv/lib/python3.10/site-packages/fastapi/routing.py", line 278, in app
+    raw_response = await run_endpoint_function(
+  File "/Users/tutu/Documents/Github/targon/.venv/lib/python3.10/site-packages/fastapi/routing.py", line 191, in run_endpoint_function
+    return await dependant.call(**values)
+  File "/Users/tutu/Documents/Github/targon/neurons/miner.py", line 65, in create_chat_completion
+    r = await self.client.send(req, stream=True)
+  File "/Users/tutu/Documents/Github/targon/.venv/lib/python3.10/site-packages/httpx/_client.py", line 1629, in send
+    response = await self._send_handling_auth(
+  File "/Users/tutu/Documents/Github/targon/.venv/lib/python3.10/site-packages/httpx/_client.py", line 1657, in _send_handling_auth
+    response = await self._send_handling_redirects(
+  File "/Users/tutu/Documents/Github/targon/.venv/lib/python3.10/site-packages/httpx/_client.py", line 1694, in _send_handling_redirects
+    response = await self._send_single_request(request)
+  File "/Users/tutu/Documents/Github/targon/.venv/lib/python3.10/site-packages/httpx/_client.py", line 1730, in _send_single_request
+    response = await transport.handle_async_request(request)
+  File "/Users/tutu/Documents/Github/targon/.venv/lib/python3.10/site-packages/httpx/_transports/default.py", line 393, in handle_async_request
+    with map_httpcore_exceptions():
+  File "/opt/homebrew/Cellar/python@3.10/3.10.14_1/Frameworks/Python.framework/Versions/3.10/lib/python3.10/contextlib.py", line 153, in __exit__
+    self.gen.throw(typ, value, traceback)
+  File "/Users/tutu/Documents/Github/targon/.venv/lib/python3.10/site-packages/httpx/_transports/default.py", line 118, in map_httpcore_exceptions
+    raise mapped_exc(message) from exc
+httpx.ReadTimeout
+Exception in thread Thread-7 (start_subscription):
+Traceback (most recent call last):
+  File "/opt/homebrew/Cellar/python@3.10/3.10.14_1/Frameworks/Python.framework/Versions/3.10/lib/python3.10/threading.py", line 1016, in _bootstrap_inner
+    self.run()
+  File "/opt/homebrew/Cellar/python@3.10/3.10.14_1/Frameworks/Python.framework/Versions/3.10/lib/python3.10/threading.py", line 953, in run
+    self._target(*self._args, **self._kwargs)
+  File "/Users/tutu/Documents/Github/targon/targon/metagraph.py", line 104, in start_subscription
+    return substrate.subscribe_block_headers(
+  File "/Users/tutu/Documents/Github/targon/.venv/lib/python3.10/site-packages/substrateinterface/base.py", line 2586, in subscribe_block_headers
+    return self.__get_block_handler(
+  File "/Users/tutu/Documents/Github/targon/.venv/lib/python3.10/site-packages/substrateinterface/base.py", line 2439, in __get_block_handler
+    result = self.rpc_request(f"chain_subscribe{rpc_method_prefix}Heads", [], result_handler=result_handler)
+  File "/Users/tutu/Documents/Github/targon/.venv/lib/python3.10/site-packages/substrateinterface/base.py", line 329, in rpc_request
+    self.__rpc_message_queue.append(json.loads(self.websocket.recv()))
+  File "/Users/tutu/Documents/Github/targon/.venv/lib/python3.10/site-packages/websocket/_core.py", line 388, in recv
+    opcode, data = self.recv_data()
+  File "/Users/tutu/Documents/Github/targon/.venv/lib/python3.10/site-packages/websocket/_core.py", line 416, in recv_data
+    opcode, frame = self.recv_data_frame(control_frame)
+  File "/Users/tutu/Documents/Github/targon/.venv/lib/python3.10/site-packages/websocket/_core.py", line 437, in recv_data_frame
+    frame = self.recv_frame()
+  File "/Users/tutu/Documents/Github/targon/.venv/lib/python3.10/site-packages/websocket/_core.py", line 478, in recv_frame
+    return self.frame_buffer.recv_frame()
+  File "/Users/tutu/Documents/Github/targon/.venv/lib/python3.10/site-packages/websocket/_abnf.py", line 363, in recv_frame
+    self.recv_header()
+  File "/Users/tutu/Documents/Github/targon/.venv/lib/python3.10/site-packages/websocket/_abnf.py", line 319, in recv_header
+    header = self.recv_strict(2)
+  File "/Users/tutu/Documents/Github/targon/.venv/lib/python3.10/site-packages/websocket/_abnf.py", line 398, in recv_strict
+    bytes_ = self.recv(min(16384, shortage))
+  File "/Users/tutu/Documents/Github/targon/.venv/lib/python3.10/site-packages/websocket/_core.py", line 563, in _recv
+    return recv(self.sock, bufsize)
+  File "/Users/tutu/Documents/Github/targon/.venv/lib/python3.10/site-packages/websocket/_socket.py", line 132, in recv
+    raise WebSocketConnectionClosedException("Connection to remote host was lost.")
+websocket._exceptions.WebSocketConnectionClosedException: Connection to remote host was lost.
