@@ -125,7 +125,7 @@ async def insert_text_task_log(hotkeys, path, body_dict, queue, task_md5, worker
             "result_memo": result_memo
         }
         data_str = json.dumps(data)
-        await rabbitmq_client.send_message(message=data_str, queue_name='sn19_log_text_task')
+        await rabbitmq_client.send_message(message=data_str)
     except Exception as error:
         logger.error(f"insert_text_task_log error: {error}")
 
