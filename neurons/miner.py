@@ -15,6 +15,8 @@ from targon.utils import print_info
 import uvicorn
 import bittensor as bt
 
+from taocd.miner_worker_text import get_chat_stream
+
 
 class Miner(BaseNeuron):
     neuron_type = NeuronType.Miner
@@ -59,16 +61,25 @@ class Miner(BaseNeuron):
         )
         
         received_time = time.time()
-        
-        return get_chat_stream(self=self, request=request, path="/chat/completions", body_dict=body_dict, hotkeys={
-            "vali_hk": "1",
-            "miner_hk": "2",
-        }, received_time=received_time)
-        
-        r = await self.client.send(req, stream=True)
+        body_dict = await request.json()
+        print(f'body_dict: {body_dict}')
+        client_ip = request.client.host
+        print(f'client_ip: {client_ip}')
         return StreamingResponse(
-            r.aiter_raw(), background=BackgroundTask(r.aclose), headers=r.headers
+            get_chat_stream(self=self, body_dict=body_dict, client_ip=client_ip, path="/chat/completions",  hotkeys={
+                "vali_hk": "1",
+                "miner_hk": "2",
+            }, received_time=received_time)
         )
+        # body_dict = await request.json()
+        # bt.logging.info(f"Received chat completion request: {body_dict}")
+        # req = self.client.build_request(
+        #     "POST", "/chat/completions", json=body_dict
+        # )
+        # r = await self.client.send(req, stream=True)
+        # return StreamingResponse(
+        #     r.aiter_raw(), background=BackgroundTask(r.aclose), headers=r.headers
+        # )
 
     async def create_completion(self, request: Request):
         bt.logging.info(
@@ -78,7 +89,6 @@ class Miner(BaseNeuron):
         req = self.client.build_request(
             "POST", "/completions", content=await request.body()
         )
-        bt.logging.info(request.body())
         r = await self.client.send(req, stream=True)
         return StreamingResponse(
             r.aiter_raw(), background=BackgroundTask(r.aclose), headers=r.headers

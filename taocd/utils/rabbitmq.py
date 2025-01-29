@@ -13,7 +13,7 @@ RABBITMQ_PASS = "gmRU2aDcfaV6aoF"
 RABBITMQ_VHOST = "tao"
 
 # 可以在这里指定默认队列名称，如果项目中需要用多个队列，也可以在发送时动态传参
-DEFAULT_QUEUE_NAME = "sn19_log_task"
+DEFAULT_QUEUE_NAME = "sn04_log_text_task"
 
 
 class RabbitMQClient:

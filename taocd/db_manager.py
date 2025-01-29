@@ -7,7 +7,7 @@ from dotenv import load_dotenv
 load_dotenv()  # 加载环境变量
 
 HOST_IP = os.environ.get('HOST_IP', '')
-ONE_API_HOST = os.environ.get('ONE_API_HOST', '')
+
 # 获取数据库配置
 def get_db_config():
     return {
