@@ -9,6 +9,9 @@ from taocd.utils.rabbitmq import get_rabbitmq_client
 from taocd.utils.logger import TaocdLogger
 logger = TaocdLogger(log_file_prefix='miner_worker_text').get_logger()
 
+from taocd.utils.text_task_queue import TextTaskQueue
+text_task_queue = TextTaskQueue()
+
 FINISH_TEXT = 'data: [DONE]\n\n'
 
 def get_queue() -> Optional[str]:
@@ -30,17 +33,32 @@ async def get_chat_stream(self, body_dict, client_ip, path, hotkeys: dict = {
     final_response = []
     first_chunk_time = 0
     is_chat_request = "chat" in path
-    if True:
-        # 这边是测试one-api用的
-        async with self.client.stream("POST", path, json=body_dict, timeout=10) as resp:
-            try:
-                resp.raise_for_status()
-            except httpx.HTTPStatusError as e:
-                await resp.aread()
-                result_memo = f"HTTP Error {e.response.status_code}: {e.response.text}"
-                logger.error(result_memo)
-                asyncio.create_task(insert_text_task_log(hotkeys=hotkeys, path=path, body_dict=body_dict, queue=queue, task_md5=task_md5, worker_name=worker_name, client_ip=client_ip, received_time=received_time, first_chunk_time=first_chunk_time, exec_time=time.time() - received_time, host_ip=HOST_IP, raw_response=raw_response, final_response=final_response, result_from=0, result_memo=result_memo))
-                raise
+    try:
+        worker_data = text_task_queue.add_to_least_busy_worker(model_name, task_md5, decrypted_payload.max_tokens, is_chat_request)
+        if worker_data is None:
+            raise Exception("No worker available")
+        # 获取请求地址
+        address = worker_data.get('address')
+        # 获取队列名
+        queue = worker_data.get('queue_name')
+        # 获取服务名
+        worker_name = worker_data.get('worker_name')
+    except Exception as e:
+        text_task_queue.remove(model_name, worker_name, task_md5)
+        result_memo = f"{e}"
+        asyncio.create_task(insert_text_task_log(hotkeys=hotkeys, decrypted_payload_dict=decrypted_payload_dict, queue=queue, task_md5=task_md5, worker_name=worker_name, client_ip=client_ip, received_time=received_time, first_chunk_time=first_chunk_time, exec_time=time.time() - received_time, host_ip=HOST_IP, raw_response=raw_response, final_response=final_response, result_from=0, result_memo=result_memo))
+        raise
+    async with self.client.stream("POST", path, json=body_dict, timeout=10) as resp:
+        try:
+            resp.raise_for_status()
+        except httpx.HTTPStatusError as e:
+            text_task_queue.remove(model_name, worker_name, task_md5)
+            await resp.aread()
+            result_memo = f"HTTP Error {e.response.status_code}: {e.response.text}"
+            logger.error(result_memo)
+            asyncio.create_task(insert_text_task_log(hotkeys=hotkeys, path=path, body_dict=body_dict, queue=queue, task_md5=task_md5, worker_name=worker_name, client_ip=client_ip, received_time=received_time, first_chunk_time=first_chunk_time, exec_time=time.time() - received_time, host_ip=HOST_IP, raw_response=raw_response, final_response=final_response, result_from=0, result_memo=result_memo))
+            raise
+        try:
             async for chunk in resp.aiter_lines():
                 raw_response.append(chunk)
                 received_event_chunks = chunk.split("\n\n")
@@ -49,9 +67,6 @@ async def get_chat_stream(self, body_dict, client_ip, path, hotkeys: dict = {
                         continue
                     prefix, _, data = event.partition(":")
                     if data.strip() == "[DONE]":
-                        final_response.append(FINISH_TEXT)
-                        asyncio.create_task(insert_text_task_log(hotkeys=hotkeys, path=path, body_dict=body_dict, queue=queue, task_md5=task_md5, worker_name=worker_name, client_ip=client_ip, received_time=received_time, first_chunk_time=first_chunk_time, exec_time=time.time() - received_time, host_ip=HOST_IP, raw_response=raw_response, final_response=final_response, result_from=1, result_memo=''))
-                        yield FINISH_TEXT
                         break
                     # This is quite ineffecient but needed
                     # To work with base vllm image
@@ -83,15 +98,14 @@ async def get_chat_stream(self, body_dict, client_ip, path, hotkeys: dict = {
                     if first_chunk_time == 0:
                         first_chunk_time = time.time() - received_time
                     yield f"data: {data}\n\n"
-    else:
-        for i in range(100):
-            data = {"choices": [{"delta": {"content": f"{i}"}, "logprobs": {"content": [{"logprob": 0.0}]}}]}
-            final_response.append(f"data: {json.dumps(data)}\n\n")
-            yield f"data: {json.dumps(data)}\n\n"
-        final_response.append(FINISH_TEXT)
-        asyncio.create_task(insert_text_task_log(hotkeys=hotkeys, path=path, body_dict=body_dict, queue=queue, task_md5=task_md5, worker_name=worker_name, client_ip=client_ip, received_time=received_time, first_chunk_time=0, exec_time=time.time() - received_time, host_ip=HOST_IP, raw_response='', final_response=final_response, result_from=1, result_memo=''))
-
-        yield FINISH_TEXT
+        except Exception as e:
+            logger.error(f"Error during streaming: {e}")
+            raise
+        finally: 
+            text_task_queue.remove(model_name, worker_name, task_md5)
+            final_response.append(FINISH_TEXT)
+            asyncio.create_task(insert_text_task_log(hotkeys=hotkeys, decrypted_payload_dict=decrypted_payload_dict, queue=queue, task_md5=task_md5, worker_name=worker_name, client_ip=client_ip, received_time=received_time, first_chunk_time=first_chunk_time, exec_time=time.time() - received_time, host_ip=HOST_IP, raw_response=raw_response, final_response=final_response, result_from=1, result_memo=''))
+            yield FINISH_TEXT
 
 async def insert_text_task_log(hotkeys, path, body_dict, queue, task_md5, worker_name, client_ip, received_time, first_chunk_time, exec_time, host_ip, raw_response, final_response, result_from, result_memo):
     try:
